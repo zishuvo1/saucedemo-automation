@@ -23,7 +23,6 @@ class InventoryPage {
 
   async openHamburgerMenu() {
     await this.hamburgerMenu.click();
-    // Wait for the menu to be fully open
     await this.page.waitForTimeout(500);
     await this.resetAppStateLink.waitFor({ state: 'visible', timeout: 10000 });
   }
@@ -49,11 +48,9 @@ class InventoryPage {
   }
 
   async addThreeItemsToCart() {
-    // Get all add-to-cart buttons currently visible
     const buttons = this.page.locator('[data-test^="add-to-cart"]');
     await buttons.first().waitFor({ state: 'visible', timeout: 10000 });
 
-    // Click the first three add-to-cart buttons
     await buttons.nth(0).click();
     await this.page.waitForTimeout(300);
     await buttons.nth(0).click(); // After first click, button changes, so nth(0) is now the next available
@@ -63,9 +60,6 @@ class InventoryPage {
   }
 
   async addSpecificItemsToCart(indices) {
-    // We need to click items by their original position
-    // After clicking "Add to cart", the button changes to "Remove"
-    // So we need to target items by their inventory_item index
     for (const index of indices) {
       const item = this.inventoryItems.nth(index);
       const addButton = item.locator('button:has-text("Add to cart")');
