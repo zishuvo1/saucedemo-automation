@@ -1,0 +1,23 @@
+{
+  "name": "saucedemo-automation",
+  "version": "1.0.0",
+  "description": "Automation tests for saucedemo.com using Playwright and Allure",
+  "scripts": {
+    "test:q1": "npx playwright test tests/q1-locked-out-user.spec.js --reporter=line,allure-playwright",
+    "test:q2": "npx playwright test tests/q2-standard-user.spec.js --reporter=line,allure-playwright",
+    "test:q3": "npx playwright test tests/q3-performance-glitch-user.spec.js --reporter=line,allure-playwright",
+    "test:all": "npx playwright test --reporter=line,allure-playwright",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "allure:serve": "npx allure serve allure-results",
+    "test:q1:report": "npm run test:q1 && npm run allure:serve",
+    "test:q2:report": "npm run test:q2 && npm run allure:serve",
+    "test:q3:report": "npm run test:q3 && npm run allure:serve",
+    "test:all:report": "npm run test:all && npm run allure:serve"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "allure-playwright": "^2.15.1",
+    "allure-commandline": "^2.27.0"
+  }
+}
