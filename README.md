@@ -84,7 +84,7 @@ Before running the tests, make sure you have the following installed:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/saucedemo-automation.git
+git clone https://github.com/zishuvo1/saucedemo-automation.git
 cd saucedemo-automation
 Step 2: Install Dependencies
 Bash
