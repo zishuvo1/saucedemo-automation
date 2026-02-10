@@ -72,19 +72,19 @@ Before running the tests, make sure you have the following installed:
 git clone https://github.com/zishuvo1/saucedemo-automation.git
 cd saucedemo-automation
 
-text
+
 
 
 ### Step 2: Install Dependencies
 npm install
 
-text
+
 
 
 ### Step 3: Install Playwright Browsers
 npx playwright install
 
-text
+
 
 
 ---
@@ -94,7 +94,7 @@ text
 ### ✅ Run All Three Tests Together (Sequentially)
 npm run test:all
 
-text
+
 
 
 ### ✅ Run Each Test Separately
@@ -102,19 +102,19 @@ text
 **Q1: Locked Out User Test**
 npm run test:q1
 
-text
+
 
 
 **Q2: Standard User - Complete Purchase Journey**
 npm run test:q2
 
-text
+
 
 
 **Q3: Performance Glitch User - Filter and Purchase**
 npm run test:q3
 
-text
+
 
 
 ---
@@ -129,7 +129,7 @@ npm run test:q1:report
 npm run test:q2:report
 npm run test:q3:report
 
-text
+
 
 
 ### Option 2: Generate Report Manually After Test Execution
@@ -137,7 +137,7 @@ npm run test:all
 npm run allure:generate
 npm run allure:open
 
-text
+
 
 
 ### Option 3: Serve Report Directly from Results
