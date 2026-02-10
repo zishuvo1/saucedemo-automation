@@ -25,30 +25,27 @@ This project contains three automated test scenarios for the SauceDemo e-commerc
 - **Browser:** Chromium
 
 ---
-
 ## 📁 Project Structure
-saucedemo-automation/
-├── package.json # Project dependencies and scripts
-├── playwright.config.js # Playwright configuration
-├── README.md # Project documentation
-├── .gitignore # Git ignore rules
-├── pages/ # Page Object Model classes
-│ ├── LoginPage.js # Login page actions and locators
-│ ├── InventoryPage.js # Products page actions and locators
-│ ├── CartPage.js # Cart page actions and locators
-│ ├── CheckoutStepOnePage.js # Checkout info page actions and locators
-│ ├── CheckoutStepTwoPage.js # Checkout overview page actions and locators
-│ └── CheckoutCompletePage.js # Order complete page actions and locators
-├── tests/ # Test specification files
-│ ├── q1-locked-out-user.spec.js # Q1 test - Locked out user
-│ ├── q2-standard-user.spec.js # Q2 test - Standard user full journey
-│ └── q3-performance-glitch-user.spec.js # Q3 test - Performance glitch user
-└── utils/ # Utility files
-└── testData.js # Test data (credentials, messages, etc.)
 
-text
-
-
+    saucedemo-automation/
+    ├── package.json
+    ├── playwright.config.js
+    ├── README.md
+    ├── .gitignore
+    ├── pages/
+    │   ├── LoginPage.js
+    │   ├── InventoryPage.js
+    │   ├── CartPage.js
+    │   ├── CheckoutStepOnePage.js
+    │   ├── CheckoutStepTwoPage.js
+    │   └── CheckoutCompletePage.js
+    ├── tests/
+    │   ├── q1-locked-out-user.spec.js
+    │   ├── q2-standard-user.spec.js
+    │   └── q3-performance-glitch-user.spec.js
+    └── utils/
+        └── testData.js
+        
 ---
 
 ## ⚙️ Prerequisites
@@ -57,94 +54,123 @@ Before running the tests, make sure you have the following installed:
 
 1. **Node.js** (v16 or higher)
    - Download: [https://nodejs.org/](https://nodejs.org/)
-   - Verify installation:
-     ```bash
-     node --version
-     npm --version
-     ```
+   - Verify: `node --version` and `npm --version`
 
 2. **Java** (JDK 8 or higher) - Required for Allure Report
    - Download: [https://www.java.com/](https://www.java.com/)
-   - Verify installation:
-     ```bash
-     java -version
-     ```
+   - Verify: `java -version`
 
 3. **Git**
    - Download: [https://git-scm.com/](https://git-scm.com/)
-   - Verify installation:
-     ```bash
-     git --version
-     ```
+   - Verify: `git --version`
 
 ---
 
 ## 🚀 Setup Instructions
 
 ### Step 1: Clone the Repository
-
-```bash
 git clone https://github.com/zishuvo1/saucedemo-automation.git
 cd saucedemo-automation
-Step 2: Install Dependencies
-Bash
 
+text
+
+
+### Step 2: Install Dependencies
 npm install
-Step 3: Install Playwright Browsers
-Bash
 
+text
+
+
+### Step 3: Install Playwright Browsers
 npx playwright install
-▶️ How to Run Tests
-Run All Three Tests Together (Sequentially)
-Bash
 
+text
+
+
+---
+
+## ▶️ How to Run Tests
+
+### ✅ Run All Three Tests Together (Sequentially)
 npm run test:all
-Run Each Test Separately
-Q1: Locked Out User Test
-Bash
 
+text
+
+
+### ✅ Run Each Test Separately
+
+**Q1: Locked Out User Test**
 npm run test:q1
-Q2: Standard User - Complete Purchase Journey
-Bash
 
+text
+
+
+**Q2: Standard User - Complete Purchase Journey**
 npm run test:q2
-Q3: Performance Glitch User - Filter and Purchase
-Bash
 
+text
+
+
+**Q3: Performance Glitch User - Filter and Purchase**
 npm run test:q3
-📊 Allure Report Generation
+
+text
+
+
+---
+
+## 📊 Allure Report Generation
+
 Allure report is generated after every test execution automatically.
 
-Option 1: Run Tests and Open Report Together
-Bash
-
-# Run all tests and open Allure report
+### Option 1: Run Tests and Open Report Together
 npm run test:all:report
-
-# Run Q1 test and open Allure report
 npm run test:q1:report
-
-# Run Q2 test and open Allure report
 npm run test:q2:report
-
-# Run Q3 test and open Allure report
 npm run test:q3:report
-Option 2: Generate Report Manually After Test Execution
-Bash
 
-# First run the tests
+text
+
+
+### Option 2: Generate Report Manually After Test Execution
 npm run test:all
-
-# Generate the Allure report
 npm run allure:generate
-
-# Open the Allure report in browser
 npm run allure:open
-Option 3: Serve Report Directly from Results
-Bash
 
-# First run the tests
+text
+
+
+### Option 3: Serve Report Directly from Results
 npm run test:all
-
-# Serve and open the Allure report
 npm run allure:serve
+
+
+## 🔑 Test Credentials
+
+| User | Username | Password |
+|------|----------|----------|
+| Locked Out User | `locked_out_user` | `secret_sauce` |
+| Standard User | `standard_user` | `secret_sauce` |
+| Performance Glitch User | `performance_glitch_user` | `secret_sauce` |
+
+---
+
+## 📸 Test Configuration
+
+| Setting | Value |
+|---------|-------|
+| Browser | Chromium (headless mode) |
+| Viewport | 1280 x 720 |
+| Screenshots | Captured on every test |
+| Video | Recorded for every test |
+| Trace | Enabled for debugging |
+| Timeout | 60 seconds (120s for Q3) |
+| Workers | 1 (sequential execution) |
+| Retries | 0 |
+
+---
+
+## 👤 Author
+
+- Name: Md Zahidul Islam
+- GitHub: [https://github.com/zishuvo1](https://github.com/zishuvo1)
